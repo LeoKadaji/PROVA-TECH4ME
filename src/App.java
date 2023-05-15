@@ -73,10 +73,7 @@ public class App {
 
             } else if (opcao == 4) {
                  // Se não tem ninguém cadastrado no vetor, caio fora
-                 if (qtdCadastrados == 0) {
-                    System.out.println("\nSem pilotos, não há como cadastrar uma aeronave");
-                    sc.next();
-                 }System.out.println("Informe o nome do piloto para localizar seu nome, cpf e breve. e depois cadastrar sua aeronave!");
+                 System.out.println("Informe o nome do piloto para localizar seu nome, cpf e breve. e depois cadastrar sua aeronave!");
                     nome = sc.next();
                     for (Piloto piloto : lista) {
                         if(piloto!=null && nome.equals(piloto.getNome())){
@@ -92,11 +89,16 @@ public class App {
                //Crie a aeronave vinculando-a ao piloto
                 System.out.println("\nAeronave cadastrada com sucesso.");
                 //Exiba os dados da aeronave
+                
                 sc.next();
                     }
                 }
-            }
-  
+            if (qtdCadastrados == 0) {
+                System.out.println("\nSem pilotos, não há como cadastrar uma aeronave");
+                sc.next();
+             }
+
+            }   
             else if (opcao != 0) {
                 System.out.println("\nOpção inválida!");
             }
